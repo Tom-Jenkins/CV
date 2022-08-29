@@ -65,7 +65,7 @@ baretable = function(tbl, digits = 0,
 
 # Profile
 
-Scientist specialising in bioinformatics, data analysis and R programming. I have a broad range of interests and knowledge in evolutionary biology, geospatial analysis and data science. Previous projects include population genomics and whole genome sequencing of marine species, genome assembly and trait-association modelling, and predicting habitat suitability using machine learning.
+Scientist specialising in bioinformatics, data analysis and R programming. I have a broad range of experience and knowledge in evolutionary biology, geospatial analysis and data science. Previous projects include population genomics and whole genome sequencing of marine species, genome assembly and trait-association modelling, and predicting habitat suitability using machine learning.
 
 \vspace{12pt}
 
@@ -91,7 +91,7 @@ tribble(
 tribble(
   ~Year, ~Degree, ~Subject, ~Grade, ~Institution,
   2018, "PhD", "Biological Sciences", "", "University of Exeter",
-  2014, "MRes", "Biodiversity, Informatics and Genomics", "Distinction", "Imperial Colleage London",
+  2014, "MRes", "Biodiversity Informatics and Genomics", "Distinction", "Imperial Colleage London",
   2010, "BSc", "Marine Biology", "First Class Honours", "Swansea University"
 ) %>%
   select(Year, Degree, Subject, Institution) %>% 
@@ -105,25 +105,26 @@ tribble(
 ```{r, results = "asis"}
 tribble(
   ~Level, ~Skill,
-  "Proficient", "\\textbf{R Programming, Linux, Geocomputation, MS Office}",
-  "Competent", "\\textbf{GitHub, AWS, R Markdown, R Shiny, Leaflet.js, ECharts.js}"
+  "Proficient", "\\textbf{R Programming, Linux , Geocomputation, MS Office}",
+  "Competent", "\\textbf{GitHub, AWS, R Markdown, R Shiny, Leaflet.js, ECharts.js}",
+  "Developing", "\\textbf{Nextflow, JavaScript}"
 ) %>%
   baretable()
 ```
 
 \vspace{12pt}
 
-# Selected Awards and Talks
+# Selected Communication and Awards
 
 ```{r, results = "asis"}
 tribble(
   ~Year, ~Award, ~Description,
-  2022, "Talk", "Live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral ",
+  2022, "Interview", "Live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral ",
   NA, NA, "habitat suitability modelling",
-  2021, "Talk", "Pre-recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on",
-  NA, NA, "red algae genomics",
+  2021, "Interview", "Pre-recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on",
+  NA, NA, "red algae population genomics",
   2019, "Award", "British Ecological Society Research Grant (£5,000)",
-  2018, "Talk", "Invited talk at ARCH-UK Annual Science Event",
+  2018, "Talk", "Invited talk at Aquaculture Research Collaborative Hub UK Annual Conference",
   2018, "Award", "Heredity Fieldwork Grant (£1,284)"
 ) %>%
   baretable()
