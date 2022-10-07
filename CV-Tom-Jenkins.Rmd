@@ -65,7 +65,9 @@ baretable = function(tbl, digits = 0,
 
 # Profile
 
-Scientist specialising in bioinformatics, data analysis and R programming. I have a broad range of interests and knowledge in evolutionary biology, geospatial analysis and data science. Previous projects include population genomics and whole genome sequencing of marine species, genome assembly and trait-association modelling, and predicting habitat suitability using machine learning.
+<!-- Scientist specialising in bioinformatics, data analysis and programming. I have a broad range of interests and knowledge in evolutionary biology, geospatial analysis and data science. Previous projects include population genomics and whole genome sequencing of marine species, genome assembly and trait-association modelling, and predicting habitat suitability using machine learning. -->
+
+An experienced scientist and research professional with a demonstrated history of working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, geospatial analysis, data science and software development. Previous projects include population genomics and whole genome sequencing, predicting habitat suitability using machine learning, and developing software applications for internal and external customers.
 
 \vspace{12pt}
 
@@ -75,7 +77,7 @@ Scientist specialising in bioinformatics, data analysis and R programming. I hav
 tribble(
   ~Start, ~End, ~Position, ~Place,
   "Apr 2022", "Present", "\\textbf{Bioinformatician \\& Software Developer}", "Animal and Plant Health Agency",
-  "Feb 2021", "Mar 2022", "\\textbf{Senior Data Analyst / Advisor}", "Natural England",
+  "Feb 2021", "Mar 2022", "\\textbf{Senior Data Analyst}", "Natural England",
   "Dec 2018", "Jan 2021", "\\textbf{Postdoctoral Research Associate}", "University of Exeter"
 ) %>%
   mutate(Years = paste(Start, "--", End, sep = "")) %>%
@@ -90,7 +92,7 @@ tribble(
 ```{r, results = "asis"}
 tribble(
   ~Year, ~Degree, ~Subject, ~Grade, ~Institution,
-  2018, "PhD", "Biological Sciences", "", "University of Exeter",
+  2018, "PhD", "Evolutionary Biology", "", "University of Exeter",
   2014, "MRes", "Biodiversity, Informatics and Genomics", "Distinction", "Imperial Colleage London",
   2010, "BSc", "Marine Biology", "First Class Honours", "Swansea University"
 ) %>%
@@ -103,10 +105,16 @@ tribble(
 # Computer Skills
 
 ```{r, results = "asis"}
+# tribble(
+#   ~Level, ~Skill,
+#   "Proficient", "\\textbf{R Programming, Linux, Geocomputation, MS Office}",
+#   "Competent", "\\textbf{GitHub, AWS, R Markdown, R Shiny, Leaflet.js, ECharts.js}"
+# ) %>%
+#   baretable()
 tribble(
   ~Level, ~Skill,
-  "Proficient", "\\textbf{R Programming, Linux, Geocomputation, MS Office}",
-  "Competent", "\\textbf{GitHub, AWS, R Markdown, R Shiny, Leaflet.js, ECharts.js}"
+  "Skill", "\\textbf{Bioinformatics, Data wrangling, DataViz, Geocomputation, Modelling, Web development}",
+  "Tools", "\\textbf{R, JavaScript, HTML, CSS, Linux, Nextflow, GitHub, AWS, R Shiny, VS Code}"
 ) %>%
   baretable()
 ```
