@@ -2,7 +2,7 @@
 name: Tom L Jenkins
 address: "Exeter, United Kingdom"
 phone: +44 7880 950409
-email: "Tom.L.Jenkins@outloogergrgk.com"
+email: "Tom.L.Jenkins@outlook.com"
 www: tomjenkins.netlify.app
 twitter: 
 github: Tom-Jenkins
@@ -14,7 +14,7 @@ output:
     template: hyndmantemplate_modified.tex
 header-includes:
   - \geometry{left=1.8cm,right=1.8cm,top=1.9cm,bottom=1.9cm}
-  - \definecolor{headcolor}{HTML}{3339FF}
+  - \definecolor{headcolor}{HTML}{003366}
 editor_options:
   chunk_output_type: console
 ---

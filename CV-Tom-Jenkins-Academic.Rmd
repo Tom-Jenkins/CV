@@ -1,0 +1,186 @@
+---
+name: Dr Tom Jenkins
+address: "Exeter, United Kingdom"
+phone: +44 7880 950409
+email: "Tom.L.Jenkins@outlook.com"
+www: tomjenkins.netlify.app
+twitter: 
+github: Tom-Jenkins
+position: PhD
+date:
+# output: vitae::hyndman
+output:
+  vitae::cv_document:
+    template: hyndmantemplate_modified.tex
+header-includes:
+  - \geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+  - \definecolor{headcolor}{HTML}{003366}
+editor_options:
+  chunk_output_type: console
+---
+
+<!-- \titlespacing{\section}{0pt}{1.ex}{0.5ex} -->
+\fontsize{12}{16}\sf
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  cache = FALSE
+)
+library(tidyverse)
+library(vitae)
+```
+
+```{r}
+# Function to produce very basic table, no lines or headings
+# https://github.com/robjhyndman/CV
+baretable = function(tbl, digits = 0,
+                      include.colnames = FALSE, include.rownames = FALSE,
+                      hline.after = NULL,
+                      size = getOption("xtable.size", NULL),
+                      add.to.row = getOption("xtable.add.to.row", NULL),
+                      longtable = FALSE,
+                      ...) {
+  xtable::xtable(tbl, digits = digits, ...) %>%
+    print(
+      include.colnames = include.colnames,
+      include.rownames = include.rownames,
+      hline.after = hline.after,
+      comment = FALSE,
+      tabular.environment = if_else(longtable, "longtable", "tabular"),
+      floating = FALSE,
+      size = size,
+      add.to.row = add.to.row,
+      sanitize.text.function = function(x) {
+        x
+      }
+    )
+}
+```
+
+\vspace{6pt}
+
+# Profile
+
+An experienced scientist and research professional with a demonstrated history of working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, geospatial analysis, data science and software development. Previous projects include population genomics, \textit{de novo} nuclear and organelle genome assembly and annotation, predicting habitat suitability using machine learning, and developing web applications for internal and external customers.
+
+\vspace{12pt}
+
+# Employment
+
+```{r, results = "asis"}
+tribble(
+  ~Start, ~End, ~Position, ~Place,
+  "Apr 2022", "Present", "\\textbf{Bioinformatician \\& Software Developer}", "Animal and Plant Health Agency",
+  "Feb 2021", "Mar 2022", "\\textbf{Senior Data Analyst}", "Natural England",
+  "Dec 2018", "Jan 2021", "\\textbf{Postdoctoral Research Associate}", "University of Exeter"
+) %>%
+  mutate(Years = paste(Start, "--", End, sep = "")) %>%
+  select(Years, Position, Place) %>%
+  baretable()
+```
+
+\vspace{12pt}
+
+# Qualifications
+
+```{r, results = "asis"}
+tribble(
+  ~Year, ~Degree, ~Subject, ~Grade, ~Institution,
+  2018, "PhD", "Evolutionary Biology", "", "University of Exeter",
+  2014, "MRes", "Biodiversity, Informatics and Genomics", "Distinction", "Imperial Colleage London",
+  2010, "BSc", "Marine Biology", "First Class Honours", "Swansea University"
+) %>%
+  select(Year, Degree, Subject, Institution) %>% 
+  baretable()
+```
+
+\vspace{12pt}
+
+# Programming
+
+```{r, results = "asis"}
+tribble(
+  ~Skill, ~Tools,
+  "Skill", "\\textbf{Bioinformatics, Data Wrangling, Data Visualisation, Geocomputation, Modelling,}",
+  "", "\\textbf{Statistics, Web Development}",
+  "Tools", "\\textbf{R, Bash, Linux, JavaScript, CSS, HTML, Nextflow, GitHub, HPC, AWS}",
+  "", "Libraries: tidyverse, adegenet, vegan, tidymodels, sf, terra, dismo, shiny, leaflet.js, echarts.js",
+) %>%
+  baretable()
+```
+
+\vspace{12pt}
+
+# Recent Science Communication
+
+```{r, results = "asis"}
+tribble(
+  ~Year, ~Award, ~Description,
+  2023, "Seminar", "Presentation at departmental meeting titled: \"Whole genome sequencing:",
+  NA, NA, "what, why and how is it used in outbreak investigations of bovine TB\".",
+  2022, "Talk", "Presentation at the annual Natural England marine conference titled",
+  NA, NA, "\"Maerl biodiversity: understanding species, genetic and ecosystem diversity.\"",
+  2022, "Interview", "Live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral",
+  NA, NA, "habitat suitability modelling.",
+  2021, "Interview", "Pre-recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on",
+  NA, NA, "coralline algae population genomics.",
+  2020, "Webinar", "Invited talk at Aquaculture Research Collaborative Hub UK annual conference",
+  NA, NA, "titled \"Developing genomic resources to advance the aquaculture of European",
+  NA, NA, "lobsters\".",
+  2020, "Comics", "A collection of comic-style summaries to disseminate findings of lobster genetics:",
+  NA, NA, "https://tomjenkins.netlify.app/research-projects/lobster-popgen/.",
+  
+) %>%
+  baretable()
+```
+
+\vspace{12pt}
+
+# Selected Funding and Awards
+
+```{r, results = "asis"}
+tribble(
+  ~Year, ~Award, ~Description,
+  2023, "Funding", "Co-investigator research grant from Natural Resources Wales (£5,000)",
+  2022, "Funding", "Co-investigator research grant from Natural England (£20,000)",
+  2019, "Award", "Genetics Society training grant (£1,000)",
+  2019, "Award", "IDSAI early career researcher travel grant (£500)",
+  2019, "Funding", "Principal investigator research grant from the British Ecological Society (£5,000)",
+  2018, "Award", "Genetics Society junior scientist travel grant (£750)",
+  2018, "Funding", "Heredity fieldwork grant (£1,284)",
+  2017, "Award", "Genetics Society junior scientist travel grant (£500)",
+  2017, "Award", "British Ecological Society travel grant (£500)",
+  2014, "Award", "Illumina prize in Biodiversity Informatics and Genomics for best masters",
+  NA, NA, "project (£1,000)"
+) %>%
+  baretable()
+```
+
+\vspace{12pt}
+
+# Selected Publications
+
+  * Macleod KL, **Jenkins TL**, Witt J, Stevens JR (*in review*). Rare, long-distance dispersal underpins genetic connectivity in pink sea fan, *Eunicella verrucosa*. Evolutionary Applications.
+  
+  * Macleod KL, Paris JR, **Jenkins TL**, Stevens JR (*in review*). The first genome of the cold-water octocoral, the pink sea fan, *Eunicella verrucosa*. Genome Biology and Evolution.
+  
+ * Ellis CD, Macleod KL, **Jenkins TL**, *et al*. (*in press*). Shared and distinct patterns of genetic structure in two sympatric large decapods. Journal of Biogeography.
+
+  * **Jenkins TL**, Stevens JR (2022). Predicting habitat suitability and range shifts under projected climate change for two octocorals in the north-east Atlantic. PeerJ 10, [e13509](https://doi.org/https://doi.org/10.7717/peerj.13509).
+  
+  * **Jenkins TL**, Guillemin M-L, Simon-Nutbrown C, Burdett HL, Stevens JR, Peña V (2021). Whole genome genotyping reveals discrete genetic diversity in north‐east Atlantic maerl beds. Evolutionary Applications 14, [1558–1571](https://doi.org/https://doi.org/10.1111/eva.13219).
+  
+  * Houston RD, Bean TP, Macqueen DJ, Gundappa MK, Jin YH, **Jenkins TL**, *et al*. (2020). Harnessing genomics to fast-track genetic improvement in aquaculture. Nature Reviews Genetics 21, [389–409](https://doi.org/https://doi.org/10.1038/s41576-020-0227-y).
+  
+  * **Jenkins TL**, Ellis CD, Triantafyllidis A, Stevens JR (2019). Single nucleotide polymorphisms reveal a genetic cline across the north‐east Atlantic and enable powerful population assignment in the European lobster. Evolutionary Applications 12, [1881-1899](https://doi.org/https://doi.org/10.1111/eva.12849).
+  
+  * **Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684).
+  
+  * **Jenkins TL**, Stevens JR (2018). Assessing connectivity between MPAs: selecting taxa and translating genetic data to inform policy. Marine Policy 94, [165-173](https://doi.org/https://doi.org/10.1016/j.marpol.2018.04.022).
+  
+  
+
