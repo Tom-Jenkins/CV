@@ -2,7 +2,7 @@
 name: Tom L Jenkins
 address: "Exeter, United Kingdom"
 phone: +44 7880 950409
-email: "Tom.L.Jenkins@outlook.com"
+email: "Tom.L.Jenkins@outloogergrgk.com"
 www: tomjenkins.netlify.app
 twitter: 
 github: Tom-Jenkins
