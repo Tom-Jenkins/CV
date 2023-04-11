@@ -154,7 +154,7 @@ tribble(
   2018, "Funding", "Heredity fieldwork grant (£1,284)",
   2017, "Award", "Genetics Society junior scientist travel grant (£500)",
   2017, "Award", "British Ecological Society travel grant (£500)",
-  2014, "Award", "Illumina prize in Biodiversity Informatics and Genomics for best masters",
+  2014, "Award", "Illumina prize in Biodiversity, Informatics and Genomics for outstanding masters",
   NA, NA, "project (£1,000)"
 ) %>%
   baretable()
@@ -168,7 +168,10 @@ tribble(
   
   * Macleod KL, Paris JR, **Jenkins TL**, Stevens JR (*in review*). The first genome of the cold-water octocoral, the pink sea fan, *Eunicella verrucosa*. Genome Biology and Evolution.
   
- * Ellis CD, Macleod KL, **Jenkins TL**, *et al*. (*in press*). Shared and distinct patterns of genetic structure in two sympatric large decapods. Journal of Biogeography.
+  * Ellis CD, Macleod KL, **Jenkins TL**, *et al*. (*in press*). Shared and distinct patterns of genetic structure in two sympatric large decapods. Journal of Biogeography.
+  
+  * Ellis RJ, **Jenkins TL** (2022). Management and analysis of high-throughput sequence data for animal
+infectious disease. World Organisation for Animal Health, Scientific and Technical Review 41, 2.
 
   * **Jenkins TL**, Stevens JR (2022). Predicting habitat suitability and range shifts under projected climate change for two octocorals in the north-east Atlantic. PeerJ 10, [e13509](https://doi.org/https://doi.org/10.7717/peerj.13509).
   
