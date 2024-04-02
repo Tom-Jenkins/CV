@@ -1,12 +1,12 @@
 ---
 name: Dr Tom Jenkins
+position: Evolutionary Biologist
+email: "t.l.jenkins@exeter.ac.uk"
+# www: Exeter-Profile
+github: tom-jenkins
+linkedin: tom-l-jenkins
+twitter: tom__jenkins
 address: "Exeter, United Kingdom"
-phone: +44 7880 950409
-email: "Tom.L.Jenkins@outlook.com"
-www: tomjenkins.netlify.app
-twitter: 
-github: Tom-Jenkins
-position: PhD
 date:
 # output: vitae::hyndman
 output:
@@ -14,7 +14,7 @@ output:
     template: hyndmantemplate_modified.tex
 header-includes:
   - \geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
-  - \definecolor{headcolor}{HTML}{003366}
+  - \definecolor{headcolor}{HTML}{000088}
 editor_options:
   chunk_output_type: console
 ---
@@ -65,7 +65,7 @@ baretable = function(tbl, digits = 0,
 
 # Profile
 
-An experienced scientist and research professional with a demonstrated history of working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, geospatial analysis, data science and software development. Previous projects include population genomics, \textit{de novo} nuclear and organelle genome assembly and annotation, predicting habitat suitability using machine learning, and developing web applications for internal and external customers.
+Experienced scientist and research professional with a demonstrated history of working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, genomics, geospatial analysis and software development. Previous projects cover molecular ecology, nuclear and organelle genome assembly and annotation, predicting habitat suitability using machine learning, and developing web applications for internal and external customers.
 
 \vspace{12pt}
 
@@ -73,13 +73,14 @@ An experienced scientist and research professional with a demonstrated history o
 
 ```{r, results = "asis"}
 tribble(
-  ~Start, ~End, ~Position, ~Place,
-  "Apr 2022", "Present", "\\textbf{Bioinformatician \\& Software Developer}", "Animal and Plant Health Agency",
-  "Feb 2021", "Mar 2022", "\\textbf{Senior Data Analyst}", "Natural England",
-  "Dec 2018", "Jan 2021", "\\textbf{Postdoctoral Research Associate}", "University of Exeter"
+  ~Start, ~End, ~Position,
+  "2023", "", "\\textbf{Postdoctoral Research Fellow}, \\textit{University of Exeter}",
+  "2022", "2023", "\\textbf{Bioinformatician \\& Software Developer}, \\textit{Animal and Plant Health Agency}",
+  "2021", "2022", "\\textbf{Senior Data Analyst}, \\textit{Natural England}",
+  "2018", "2021", "\\textbf{Postdoctoral Research Associate}, \\textit{University of Exeter}"
 ) %>%
   mutate(Years = paste(Start, "--", End, sep = "")) %>%
-  select(Years, Position, Place) %>%
+  select(Years, Position) %>%
   baretable()
 ```
 
@@ -92,9 +93,9 @@ tribble(
   ~Year, ~Degree, ~Subject, ~Grade, ~Institution,
   2018, "PhD", "Evolutionary Biology", "", "University of Exeter",
   2014, "MRes", "Biodiversity, Informatics and Genomics", "Distinction", "Imperial Colleage London",
-  2010, "BSc", "Marine Biology", "First Class Honours", "Swansea University"
+  2010, "BSc (Hons)", "Marine Biology", "First Class Honours", "Swansea University"
 ) %>%
-  select(Year, Degree, Subject, Institution) %>% 
+  select(Degree, Institution, Year) %>% 
   baretable()
 ```
 
@@ -105,57 +106,92 @@ tribble(
 ```{r, results = "asis"}
 tribble(
   ~Skill, ~Tools,
-  "Skill", "\\textbf{Bioinformatics, Data Wrangling, Data Visualisation, Geocomputation, Modelling,}",
-  "", "\\textbf{Statistics, Web Development}",
-  "Tools", "\\textbf{R, Bash, Linux, JavaScript, CSS, HTML, Nextflow, GitHub, HPC, AWS}",
-  "", "Libraries: tidyverse, adegenet, vegan, tidymodels, sf, terra, dismo, shiny, leaflet.js, echarts.js",
+  "Skill", "bioinformatics, data wrangling and visualisation, geocomputation, modelling, statistics, web development",
+  "Tools", "bash, CSS, echarts, GitHub, HTML, JavaScript, leaflet, Linux, nextflow, R,  Shiny"
 ) %>%
-  baretable()
-```
-
-\vspace{12pt}
-
-# Recent Science Communication
-
-```{r, results = "asis"}
-tribble(
-  ~Year, ~Award, ~Description,
-  2023, "Seminar", "Presentation at departmental meeting titled: \"Whole genome sequencing:",
-  NA, NA, "what, why and how is it used in outbreak investigations of bovine TB\".",
-  2022, "Talk", "Presentation at the annual Natural England marine conference titled",
-  NA, NA, "\"Maerl biodiversity: understanding species, genetic and ecosystem diversity.\"",
-  2022, "Interview", "Live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral",
-  NA, NA, "habitat suitability modelling.",
-  2021, "Interview", "Pre-recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on",
-  NA, NA, "coralline algae population genomics.",
-  2020, "Webinar", "Invited talk at Aquaculture Research Collaborative Hub UK annual conference",
-  NA, NA, "titled \"Developing genomic resources to advance the aquaculture of European",
-  NA, NA, "lobsters\".",
-  2020, "Comics", "A collection of comic-style summaries to disseminate findings of lobster genetics:",
-  NA, NA, "https://tomjenkins.netlify.app/research-projects/lobster-popgen/.",
-  
-) %>%
-  baretable()
+  baretable(align = c("llp{0.90\\textwidth}"))
 ```
 
 \vspace{12pt}
 
 # Selected Funding and Awards
+I have acquired about £37K as a principal or co-investigator in external research grants since 2019. I have also been awarded in total over £5K for support towards courses or conferences during my academic career.
+
+\vspace{12pt}
+```{r, results = "asis"}
+display <- c(7,9,10,11,12,13,14)
+tab <- tribble(
+  ~ID, ~Year, ~Award, ~Description, ~Amount,
+  14, 2023, "Funding", "Co-investigator research grant for red algae genomics (Natural England)", 6000,
+  13, 2023, "Funding", "Co-investigator research grant for red algae genomics (Natural Resources Wales)", 5000,
+  12, 2022, "Funding", "Co-investigator research grant for red algae genomics (Natural England)", 20000,
+  11, 2019, "Award", "Bioinformatics training grant, GWAS (Genetics Society)", 1000,
+  10, 2019, "Award", "Early career researcher travel grant (Institute for Data Science and Artificial Intelligence)", 500,
+  9, 2019, "Funding", "Principal investigator research grant for maerl red algae genomics pilot study (British Ecological Society)", 5000,
+  8, 2018, "Award", "Genetics Society junior scientist travel grant", 750,
+  7, 2018, "Funding", "Heredity fieldwork grant for soft coral sampling (Genetics Society)", 1284,
+  6, 2017, "Award", "Genetics Society junior scientist non-GS travel grant", 500,
+  5, 2017, "Award", "British Ecological Society travel grant", 500,
+  4, 2017, "Award", "Genetics Society junior scientist travel grant", 150,
+  3, 2015, "Award", "Co-winner of the Syngenta award for best plant, microbial and environment business plan in the Your Entrepreneurs Scheme (YES) competition.", 125,
+  2, 2015, "Award", "Genetics Society training grant", 500,
+  1, 2014, "Award", "Illumina prize in bioinformatics and genomics for outstanding masters project", 1000,
+)
+tab %>%
+  arrange(ID) %>% 
+  slice(display) %>% 
+  arrange(desc(ID)) %>% 
+  select(Year, Description, Amount) %>% 
+  baretable(align = c("llp{0.83\\textwidth}r"))
+```
+```{r, eval = FALSE}
+tab %>% filter(Award == "Funding") %>% pull %>% sum
+tab %>% filter(Award == "Award") %>% pull %>% sum
+# tab %>% filter(Award == "Award") %>% nrow
+```
+
+\vspace{12pt}
+
+# Selected Science Communication
+
+```{r, results = "asis"}
+display <- c(1,3,4,5,6,7)
+tribble(
+  ~ID, ~Year, ~Award, ~Description,
+  7, 2023, "Seminar", "presented at cross-departmental event: \"Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB\"",
+  
+  6, 2022, "Talk", "presented at the Natural England annual marine conference: \"Maerl biodiversity: understanding species, genetic and ecosystem diversity\"",
+  
+  5, 2022, "Interview", "live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral habitat suitability modelling",
+
+  4, 2021, "Interview", "recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on coralline red algae population genomics",
+
+  3, 2020, "Webinar", "invited talk at Aquaculture Research Collaborative Hub UK annual conference: \"Developing genomic resources to advance the aquaculture of European lobsters\"",
+
+  2, 2020, "Comics", "a collection of comic-style summaries to disseminate findings of lobster genetics: https://tomjenkins.netlify.app/research-projects/lobster-popgen/",
+  
+  1, 2018, "Poster", "presented at the II Joint Congress on Evolutionary Biology in Montpellier: \"Population genetic structure of the European lobster (\\textit{Homarus gammarus}) using RADseq-derived SNPs\"",
+) %>%
+  arrange(ID) %>% 
+  slice(display) %>% 
+  arrange(desc(ID)) %>%
+  select(Year, Award, Description) %>% 
+  baretable(align = c("lllp{0.83\\textwidth}"))
+```
+
+\vspace{12pt}
+
+# Software Development
+I have developed one R package and two open-source web applications:
+
+\vspace{12pt}
 
 ```{r, results = "asis"}
 tribble(
-  ~Year, ~Award, ~Description,
-  2023, "Funding", "Co-investigator research grant from Natural Resources Wales (£5,000)",
-  2022, "Funding", "Co-investigator research grant from Natural England (£20,000)",
-  2019, "Award", "Genetics Society training grant (£1,000)",
-  2019, "Award", "IDSAI early career researcher travel grant (£500)",
-  2019, "Funding", "Principal investigator research grant from the British Ecological Society (£5,000)",
-  2018, "Award", "Genetics Society junior scientist travel grant (£750)",
-  2018, "Funding", "Heredity fieldwork grant (£1,284)",
-  2017, "Award", "Genetics Society junior scientist travel grant (£500)",
-  2017, "Award", "British Ecological Society travel grant (£500)",
-  2014, "Award", "Illumina prize in Biodiversity, Informatics and Genomics for outstanding masters",
-  NA, NA, "project (£1,000)"
+  ~Software, ~Description,
+  "\\href{https://github.com/Tom-Jenkins/mapmixture}{\\texttt{mapmixture}}", "R package for spatial visualisation of admixture and population structure",
+  "\\href{https://github.com/Tom-Jenkins/AssemblyStatsViewer}{AssemblyStatsViewer}", "web app to compare genome assembly stats from the NCBI or ENA",
+  "\\href{https://lobstergenex.com}{LobsterGeneX}", "web app to visualise lobster gene expression data",
 ) %>%
   baretable()
 ```
@@ -163,27 +199,32 @@ tribble(
 \vspace{12pt}
 
 # Selected Publications
+I have authored X papers since 2017, Y of which are first-author publications. On [Google Scholar](https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en), my h-index is 9 with a total of 583 citations (as of 30 November 2023). I have also achieved an altmetric score over 30 in seven articles, two of which scored [964](https://www.altmetric.com/details/128937304) and [220](https://www.altmetric.com/details/103021438).
 
-  * Macleod KL, **Jenkins TL**, Witt J, Stevens JR (*in review*). Rare, long-distance dispersal underpins genetic connectivity in pink sea fan, *Eunicella verrucosa*. Evolutionary Applications.
+\vspace{12pt}
+
+  * **Jenkins TL** (in review). \texttt{mapmixture}: an R package and web app for spatial visualisation of admixture and population structure. Molecular Ecology Resources.
+
+  <!-- * Macleod KL, **Jenkins TL**, Witt J, Stevens JR (*in review*). Rare, long-distance dispersal underpins genetic connectivity in pink sea fan, *Eunicella verrucosa*. Evolutionary Applications. -->
   
-  * Macleod KL, Paris JR, **Jenkins TL**, Stevens JR (*in review*). The first genome of the cold-water octocoral, the pink sea fan, *Eunicella verrucosa*. Genome Biology and Evolution.
+  <!-- * Macleod KL, Paris JR, **Jenkins TL**, Stevens JR (*in review*). The first genome of the cold-water octocoral, the pink sea fan, *Eunicella verrucosa*. Genome Biology and Evolution. -->
   
-  * Ellis CD, Macleod KL, **Jenkins TL**, *et al*. (*in press*). Shared and distinct patterns of genetic structure in two sympatric large decapods. Journal of Biogeography.
+  <!-- * Ellis CD, Macleod KL, **Jenkins TL**, *et al*. (*in press*). Shared and distinct patterns of genetic structure in two sympatric large decapods. Journal of Biogeography. -->
   
   * Ellis RJ, **Jenkins TL** (2022). Management and analysis of high-throughput sequence data for animal
-infectious disease. World Organisation for Animal Health, Scientific and Technical Review 41, 2.
+infectious disease. World Organisation for Animal Health, Scientific and Technical Review [41, 2](https://pubmed.ncbi.nlm.nih.gov/37232313/).
 
-  * **Jenkins TL**, Stevens JR (2022). Predicting habitat suitability and range shifts under projected climate change for two octocorals in the north-east Atlantic. PeerJ 10, [e13509](https://doi.org/https://doi.org/10.7717/peerj.13509).
+  <!-- * **Jenkins TL**, Stevens JR (2022). Predicting habitat suitability and range shifts under projected climate change for two octocorals in the north-east Atlantic. PeerJ 10, [e13509](https://doi.org/https://doi.org/10.7717/peerj.13509). -->
   
-  * **Jenkins TL**, Guillemin M-L, Simon-Nutbrown C, Burdett HL, Stevens JR, Peña V (2021). Whole genome genotyping reveals discrete genetic diversity in north‐east Atlantic maerl beds. Evolutionary Applications 14, [1558–1571](https://doi.org/https://doi.org/10.1111/eva.13219).
+  * **Jenkins TL**, Guillemin M-L, Simon-Nutbrown C, Burdett HL, Stevens JR, Peña V (2021). Whole genome genotyping reveals discrete genetic diversity in north‐east Atlantic maerl beds. Evolutionary Applications, 14, [1558–1571](https://doi.org/https://doi.org/10.1111/eva.13219).
   
-  * Houston RD, Bean TP, Macqueen DJ, Gundappa MK, Jin YH, **Jenkins TL**, *et al*. (2020). Harnessing genomics to fast-track genetic improvement in aquaculture. Nature Reviews Genetics 21, [389–409](https://doi.org/https://doi.org/10.1038/s41576-020-0227-y).
+  * Houston RD, Bean TP, Macqueen DJ, Gundappa MK, Jin YH, **Jenkins TL**, *et al*. (2020). Harnessing genomics to fast-track genetic improvement in aquaculture. Nature Reviews Genetics, 21, [389–409](https://doi.org/https://doi.org/10.1038/s41576-020-0227-y).
   
-  * **Jenkins TL**, Ellis CD, Triantafyllidis A, Stevens JR (2019). Single nucleotide polymorphisms reveal a genetic cline across the north‐east Atlantic and enable powerful population assignment in the European lobster. Evolutionary Applications 12, [1881-1899](https://doi.org/https://doi.org/10.1111/eva.12849).
+  * **Jenkins TL**, Ellis CD, Triantafyllidis A, Stevens JR (2019). Single nucleotide polymorphisms reveal a genetic cline across the north‐east Atlantic and enable powerful population assignment in the European lobster. Evolutionary Applications, 12, [1881-1899](https://doi.org/https://doi.org/10.1111/eva.12849).
   
-  * **Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684).
+  * **Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ, 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684).
   
-  * **Jenkins TL**, Stevens JR (2018). Assessing connectivity between MPAs: selecting taxa and translating genetic data to inform policy. Marine Policy 94, [165-173](https://doi.org/https://doi.org/10.1016/j.marpol.2018.04.022).
+  * **Jenkins TL**, Stevens JR (2018). Assessing connectivity between MPAs: selecting taxa and translating genetic data to inform policy. Marine Policy, 94, [165-173](https://doi.org/https://doi.org/10.1016/j.marpol.2018.04.022).
   
   
 
