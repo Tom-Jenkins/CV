@@ -1,6 +1,6 @@
 ---
 name: Dr Tom Jenkins
-position: Evolutionary Biologist
+position: Biologist & Software Developer
 email: "t.l.jenkins@exeter.ac.uk"
 # www: Exeter-Profile
 github: tom-jenkins
@@ -65,7 +65,8 @@ baretable = function(tbl, digits = 0,
 
 # Profile
 
-Experienced scientist and research professional with a demonstrated history of working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, genomics, geospatial analysis and software development. Previous projects cover molecular ecology, nuclear and organelle genome assembly and annotation, predicting habitat suitability using machine learning, and developing web applications for internal and external customers.
+\hyphenpenalty=10000 \exhyphenpenalty=10000
+Professional research scientist and developer with experience working on highly diverse projects in both academic and public sector organisations. My areas of expertise include bioinformatics, genomics, geospatial analysis and software development. Previous projects cover genome assembly, gene expression analysis, population genetics, predicting habitat suitability using machine learning, and developing web applications for internal and external customers.
 
 \vspace{12pt}
 
@@ -74,13 +75,14 @@ Experienced scientist and research professional with a demonstrated history of w
 ```{r, results = "asis"}
 tribble(
   ~Start, ~End, ~Position,
-  "2023", "", "\\textbf{Postdoctoral Research Fellow}, \\textit{University of Exeter}",
-  "2022", "2023", "\\textbf{Bioinformatician \\& Software Developer}, \\textit{Animal and Plant Health Agency}",
-  "2021", "2022", "\\textbf{Senior Data Analyst}, \\textit{Natural England}",
-  "2018", "2021", "\\textbf{Postdoctoral Research Associate}, \\textit{University of Exeter}"
+  "Jul 2024", "Present", "\\textbf{Data Visualisation Developer}, \\textit{University of East Anglia (short-term contract)}",
+  "Jul 2023", "Present", "\\textbf{Postdoctoral Research Fellow}, \\textit{University of Exeter}",
+  "Apr 2022", " Jun 2023", "\\textbf{Bioinformatician \\& Software Developer}, \\textit{Animal and Plant Health Agency}",
+  "Feb 2021", "Mar 2022", "\\textbf{Senior Data Analyst}, \\textit{Natural England}",
+  "Dec 2018", "Jan 2021", "\\textbf{Postdoctoral Research Associate}, \\textit{University of Exeter}"
 ) %>%
-  mutate(Years = paste(Start, "--", End, sep = "")) %>%
-  select(Years, Position) %>%
+  mutate(Years = paste(Start, "--", End, sep = " ")) %>%
+  select(Position, Years) %>%
   baretable()
 ```
 
@@ -91,11 +93,11 @@ tribble(
 ```{r, results = "asis"}
 tribble(
   ~Year, ~Degree, ~Subject, ~Grade, ~Institution,
-  2018, "PhD", "Evolutionary Biology", "", "University of Exeter",
-  2014, "MRes", "Biodiversity, Informatics and Genomics", "Distinction", "Imperial Colleage London",
+  2018, "PhD", "Biological Sciences", "", "University of Exeter",
+  2014, "MRes", "Bioinformatics and Genomics", "Distinction", "Imperial Colleage London",
   2010, "BSc (Hons)", "Marine Biology", "First Class Honours", "Swansea University"
 ) %>%
-  select(Degree, Institution, Year) %>% 
+  select(Degree, Subject, Institution, Year) %>% 
   baretable()
 ```
 
@@ -106,8 +108,8 @@ tribble(
 ```{r, results = "asis"}
 tribble(
   ~Skill, ~Tools,
-  "Skill", "bioinformatics, data wrangling and visualisation, geocomputation, modelling, statistics, web development",
-  "Tools", "bash, CSS, echarts, GitHub, HTML, JavaScript, leaflet, Linux, nextflow, R,  Shiny"
+  "Skill", "bioinformatics, cloud computing, data wrangling, data visualisation, geocomputation, modelling, R package development, statistics, version control, web development",
+  "Tools", "AWS, bash, Bitbucket, CSS, echarts, GitHub, HTML, JavaScript, leaflet, Linux, nextflow, OpenStack, R, R Shiny"
 ) %>%
   baretable(align = c("llp{0.90\\textwidth}"))
 ```
@@ -160,50 +162,51 @@ tribble(
   ~ID, ~Year, ~Award, ~Description,
   7, 2023, "Seminar", "presented at cross-departmental event: \"Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB\"",
   
-  6, 2022, "Talk", "presented at the Natural England annual marine conference: \"Maerl biodiversity: understanding species, genetic and ecosystem diversity\"",
+  6, 2022, "Talk", "invited talk at the Natural England annual marine conference: \"Maerl biodiversity: understanding species, genetic and ecosystem diversity\"",
   
-  5, 2022, "Interview", "live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{BBC Radio Wales Drive}} to discuss published research on coral habitat suitability modelling",
+  5, 2022, "Interview", "live interview on \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\\textit{\\textcolor{gray}{BBC Radio Wales Drive}}} to discuss published research on coral habitat suitability modelling",
 
-  4, 2021, "Interview", "recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{BBC Radio Cornwall}} to discuss published research on coralline red algae population genomics",
+  4, 2021, "Interview", "recorded interview on \\href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\\textit{\\textcolor{gray}{BBC Radio Cornwall}}} to discuss published research on coralline red algae population genomics",
 
-  3, 2020, "Webinar", "invited talk at Aquaculture Research Collaborative Hub UK annual conference: \"Developing genomic resources to advance the aquaculture of European lobsters\"",
+  3, 2020, "Webinar", "invited talk at Aquaculture Research Collaborative Hub UK annual conference: \"Developing genomic resources to advance aquaculture of European lobsters\"",
 
   2, 2020, "Comics", "a collection of comic-style summaries to disseminate findings of lobster genetics: https://tomjenkins.netlify.app/research-projects/lobster-popgen/",
   
-  1, 2018, "Poster", "presented at the II Joint Congress on Evolutionary Biology in Montpellier: \"Population genetic structure of the European lobster (\\textit{Homarus gammarus}) using RADseq-derived SNPs\"",
+  1, 2018, "Poster", "presented at the II Joint Congress on Evolutionary Biology in Montpellier: \"Population genetic structure of the European lobster (\\textit{Homarus gammarus})\"",
 ) %>%
   arrange(ID) %>% 
   slice(display) %>% 
   arrange(desc(ID)) %>%
   select(Year, Award, Description) %>% 
-  baretable(align = c("lllp{0.83\\textwidth}"))
+  baretable(align = c("lllp{0.80\\textwidth}"))
 ```
 
 \vspace{12pt}
 
 # Software Development
-I have developed one R package and two open-source web applications:
+I have developed an R package and a number of open-source and internal applications:
 
 \vspace{12pt}
 
 ```{r, results = "asis"}
 tribble(
   ~Software, ~Description,
-  "\\href{https://github.com/Tom-Jenkins/mapmixture}{\\texttt{mapmixture}}", "R package for spatial visualisation of admixture and population structure",
-  "\\href{https://github.com/Tom-Jenkins/AssemblyStatsViewer}{AssemblyStatsViewer}", "web app to compare genome assembly stats from the NCBI or ENA",
-  "\\href{https://lobstergenex.com}{LobsterGeneX}", "web app to visualise lobster gene expression data",
+  "\\href{https://github.com/Tom-Jenkins/mapmixture}{\\underline{\\texttt{\\textcolor{gray}{mapmixture}}}}", "R package for spatial visualisation of admixture and population structure",
+  "\\href{https://github.com/Tom-Jenkins/AssemblyStatsViewer}{\\underline{\\textcolor{gray}{AssemblyStatsViewer}}}", "web app to compare genome assembly stats from the NCBI or ENA",
+  "\\href{https://lobstergenex.com}{\\underline{\\textcolor{gray}{LobsterGeneX}}}", "web app to visualise lobster gene expression data",
+  "\\href{https://github.com/APHA-CSU/ViewBovis}{\\underline{\\textcolor{gray}{ViewBovis}}}", "internal application for use as a disease surveillance and breakdown investigation tool for bovine TB"
 ) %>%
-  baretable()
+  baretable(align = c("llp{0.75\\textwidth}"))
 ```
 
 \vspace{12pt}
 
 # Selected Publications
-I have authored X papers since 2017, Y of which are first-author publications. On [Google Scholar](https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en), my h-index is 9 with a total of 583 citations (as of 30 November 2023). I have also achieved an altmetric score over 30 in seven articles, two of which scored [964](https://www.altmetric.com/details/128937304) and [220](https://www.altmetric.com/details/103021438).
+I have authored 19 papers since 2017, 10 of which are first-author publications. On [Google Scholar](https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en), my h-index is 9 with a total of 701 citations (as of August 2024). I have also achieved an Altmetric Score over 30 in seven articles, two of which scored \href{https://www.altmetric.com/details/128937304}{\textcolor{gray}{964}} and \href{https://www.altmetric.com/details/103021438}{\textcolor{gray}{221}}.
 
 \vspace{12pt}
 
-  * **Jenkins TL** (in review). \texttt{mapmixture}: an R package and web app for spatial visualisation of admixture and population structure. Molecular Ecology Resources.
+  * **Jenkins TL** (2024). \texttt{mapmixture}: an R package and web app for spatial visualisation of admixture and population structure. Molecular Ecology Resources, 24,  [e13943](https://doi.org/10.1111/1755-0998.13943).
 
   <!-- * Macleod KL, **Jenkins TL**, Witt J, Stevens JR (*in review*). Rare, long-distance dispersal underpins genetic connectivity in pink sea fan, *Eunicella verrucosa*. Evolutionary Applications. -->
   
@@ -222,7 +225,7 @@ infectious disease. World Organisation for Animal Health, Scientific and Technic
   
   * **Jenkins TL**, Ellis CD, Triantafyllidis A, Stevens JR (2019). Single nucleotide polymorphisms reveal a genetic cline across the north‐east Atlantic and enable powerful population assignment in the European lobster. Evolutionary Applications, 12, [1881-1899](https://doi.org/https://doi.org/10.1111/eva.12849).
   
-  * **Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ, 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684).
+  <!-- * **Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ, 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684). -->
   
   * **Jenkins TL**, Stevens JR (2018). Assessing connectivity between MPAs: selecting taxa and translating genetic data to inform policy. Marine Policy, 94, [165-173](https://doi.org/https://doi.org/10.1016/j.marpol.2018.04.022).
   
