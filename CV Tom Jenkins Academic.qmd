@@ -114,7 +114,7 @@ sidebar:
         - text: "Conference Talk"
           inst: "\\textcolor{accentcol}{Bats respond to climate through phenotypic plasticity and genetic adaptations.}\\vspace{6pt}"
           time: "\\vspace{-30pt}"
-          details: "Delivered to academics in the Biosciences department."
+          details: "Delivered to academics at the annual Genome Science conference."
           
         - text: "APHA Departmental Seminar"
           inst: "\\textcolor{accentcol}{Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB.}\\vspace{6pt}"
@@ -213,7 +213,9 @@ tibble::tribble(
 
 # Selected Publications
 
-I have authored 20 papers since 2017, 10 of which are first-author publications. On [\textcolor{gray}{Google Scholar}](https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en), my h-index is 10 with a total of 869 citations (as of May 2025). I have also achieved an Altmetric Score over 30 in seven articles, two of which scored \href{https://www.altmetric.com/details/128937304}{\textcolor{gray}{964}} and \href{https://www.altmetric.com/details/103021438}{\textcolor{gray}{221}}.
+\textcolor{accentcol}{
+I have authored 20 papers since 2017, 10 of which are first-author publications. On Google Scholar, my h-index is 10 with a total of 869 citations (as of May 2025). I have also achieved an Altmetric Score over 30 in seven articles, two of which scored 964 and 221.
+}
 
 \vspace{14pt}
 
@@ -265,6 +267,6 @@ Houston RD, Bean TP, Macqueen DJ, Gundappa MK, Jin YH, **Jenkins TL**, *et al*. 
 # Media
 
 \begin{itemize}
-  \item Live interview on \href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\textit{\textcolor{gray}{BBC Radio Wales Drive}}} to discuss published research on coral habitat suitability modelling". 
-  \item Recorded interview on \href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\textit{\textcolor{gray}{BBC Radio Cornwall}}} to discuss published research on coralline red algae population genomics"
+  \item Live interview on \href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\textit{\textcolor{gray}{BBC Radio Wales Drive}}} to discuss published research on coral habitat suitability modelling. 
+  \item Recorded interview on \href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\textit{\textcolor{gray}{BBC Radio Cornwall}}} to discuss published research on coralline red algae population genomics.
 \end{itemize}
