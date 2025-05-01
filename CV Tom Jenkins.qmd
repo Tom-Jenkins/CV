@@ -1,0 +1,185 @@
+---
+title: Tom Jenkins CV
+format:
+  modern2-cv-pdf: default
+author: Tom Jenkins PhD
+cvfont: raleway #texlive fonts like raleway,fetamont,gillius,comfortaa
+cvcolor: 
+  main: 2A2D31
+  accent: 15ABAB
+jobtitle: Software Developer & Data Analyst
+sidebar:
+  # bullets:
+  #   - Konstanz, Germany
+  #   - german
+  #   - married
+  sections:
+    
+    - name: Contact
+      items:
+        - icon: map-marker
+          text: Devon, United Kingdom
+        - icon: envelope
+          text: tom.l.jenkins@outlook.com
+        - icon: home
+          text: tomjenkins.co.uk
+          href: https://tomjenkins.co.uk
+        - icon: github
+          text: tom-jenkins
+          href: https://github.com/tom-jenkins
+        - icon: linkedin
+          text: tom-l-jenkins
+          href: https://www.linkedin.com/in/tom-l-jenkins
+          
+    - name: Skills
+      items:
+        - text: JavaScript
+          exp:
+            text: "3+ yr"
+            num: 0.3
+        - text: Web App Development
+          exp:
+            text: "3+ yr"
+            num: 0.3 
+        - text: Cloud Computing
+          exp:
+            text: "8+ yr"
+            num: 0.8              
+        - text: Data Analysis
+          exp:
+            text: "10+ yr"
+            num: 1
+        - text: Data Visualisation
+          exp:
+            text: "10+ yr"
+            num: 1            
+        - text: Bioinformatics
+          exp:
+            text: "8+ yr"
+            num: 0.8                       
+        - text: Bash / Unix
+          exp:
+            text: "8+ yr"
+            num: 0.8
+        - text: R
+          exp:
+            text: "10+ yr"
+            num: 1
+        - text: Nextflow
+          exp:
+            text: "2+ yr"
+            num: 0.2   
+        - text: Python
+          exp:
+            text: "1 yr"
+            num: 0.1
+  
+    - name: Tools
+      items:
+        - VS Code / Git / Github
+        - React (developing proficiency)
+        - Bootstrap / Tailwind CSS
+        - RESTful API
+        - HPC / AWS / OpenStack
+        - Leaflet.js / Highcharts.js
+      
+    # - name: Education
+    #   items:
+    #     - text: "Ph.D. Computer Science"
+    #       inst: "University of Konstanz"
+    #       time: "09/2012 - 11/2015"
+    #       details: "Thesis: Positional Approach for Network Centrality"
+    #     - text: "Businessmathematics (Dipl.)"
+    #       inst: "Karlsruhe Institute of Technology"
+    #       time: "10/2006 - 07/2012"
+    #       details: "Thesis: Modularity Maximization"
+      
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: cvevents
+cvevents <- function(tbl, when, what, where, descr) {
+
+    command_start <- "\\cvevent"
+    tbl[[where]] <- gsub("\n", " \\\\newline ", tbl[[where]])
+    res <- paste0(
+        command_start, "{", tbl[[when]], "}", 
+        "{", tbl[[what]], "}",
+        "{", tbl[[where]], "}",
+        "{", tbl[[descr]], "}"
+        )
+
+    cat(res, sep = "\n\n\n")
+}
+
+cvproj <- function(tbl, what, role, items){
+    command_start <- "\\cvproj"
+    res <- paste0(
+        command_start, "{", tbl[[what]], "}",
+        "{", tbl[[role]], "}",
+        "{", sapply(tbl[[items]], function(x)paste0(x,collapse = ", ")), "}"
+    )
+
+    cat(res, sep = "\n\n\n")
+}
+```
+
+<!-- # Summary -->
+
+<!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. -->
+
+# Experience
+
+```{r}
+#| label: experience
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details,
+    "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK", "07/2023 - Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R.}\\vspace{14pt}",
+    
+    "Web Application Developer", "University of East Anglia, UK (Consultancy Contract)", "07/2024 - 09/2024", "\\textcolor{accentcol}{I built agile web applications for clients to showcase \\href{https://www.uea.ac.uk/climate/climate-data/attribution-of-global-warming}{emissions} and \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{wildfire} climate data. I preprocessed data to generate new statistics and prepare (geo)JSON files.}\\vspace{14pt}",
+    
+    "Software Developer and Bioinformatician", "Animal and Plant Health Agency, UK", "04/2022 - 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations.}\\vspace{14pt}",
+    
+    "Senior Data Analyst", "Natural England, UK", "02/2021 - 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps.}\\vspace{14pt}",
+    
+    "Postdoctoral Research Associate in Bioinformatics and Data Analysis", "University of Exeter, UK", "12/2018 - 01/2021", "" 
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", descr = "details")
+```
+
+# Education
+
+```{r}
+#| label: education
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details,
+    "PhD Bioinformatics", "University of Exeter, UK", "2014 - 2018", "",
+    "MRes Informatics and Genomics (Distinction)", "Imperial College London, UK", "2013 - 2014", "",
+    "BSc Marine Biology (First Class Honours)", "Swansea University, UK", "2010 - 2013", ""
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", descr = "details")
+```
+
+# Projects
+
+See my [GitHub profile](https://github.com/tom-jenkins) for a comprehensive list of open source projects.
+\newline
+
+```{r}
+#| label: project
+#| output: asis
+tibble::tribble(
+    ~what, ~role, ~items,
+    
+    "\\href{https://earthquake-dashboard.netlify.app}{Real-Time Earthquake Dashboard}", "Interactive dashboard developed to visualise real-time earthquakes using data fetched from the Cesium ion and US Geological Survey APIs.", "",    
+    
+    "\\href{https://www.lobstergenex.com}{LobsterGeneX Web App}", "Web application developed to accompany research article allowing users to visualise gene expression data for European lobsters.", "", 
+    
+    "\\href{https://doi.org/10.32614/CRAN.package.mapmixture}{mapmixture}", "CRAN R package for spatial visualisation of ancestry, admixture and population structure. I am the creator and maintainer of this package.", "",
+) |>
+    cvproj(what = "what", role = "role", items = "items")
+```

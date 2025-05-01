@@ -1,0 +1,270 @@
+---
+title: Tom Jenkins CV
+format:
+  modern2-cv-pdf: default
+author: Dr Tom Jenkins
+cvfont: raleway #texlive fonts like raleway,fetamont,gillius,comfortaa
+cvcolor: 
+  main: 2A2D31
+  accent: 15ABAB
+jobtitle: Biologist & Data Analyst
+sidebar:
+  # bullets:
+  #   - Konstanz, Germany
+  #   - german
+  #   - married
+  sections:
+    
+    - name: Contact
+      items:
+        - icon: map-marker
+          text: Devon, United Kingdom
+        - icon: envelope
+          text: tom.l.jenkins@outlook.com
+        - icon: home
+          text: tomjenkins.co.uk
+          href: https://tomjenkins.co.uk
+        - icon: github
+          text: tom-jenkins
+          href: https://github.com/tom-jenkins
+        - icon: linkedin
+          text: tom-l-jenkins
+          href: https://www.linkedin.com/in/tom-l-jenkins          
+          
+    - name: Skills
+      items:
+        - text: R
+          exp:
+            text: "10+ yr"
+            num: 1
+        - text: Data Analysis
+          exp:
+            text: "10+ yr"
+            num: 1
+        - text: Data Visualisation
+          exp:
+            text: "10+ yr"
+            num: 1
+        - text: Statistics
+          exp:
+            text: "10+ yr"
+            num: 1            
+        - text: Cloud Computing
+          exp:
+            text: "8+ yr"
+            num: 0.8   
+        - text: Bash / Linux
+          exp:
+            text: "8+ yr"
+            num: 0.8                                 
+        - text: Bioinformatics
+          exp:
+            text: "8+ yr"
+            num: 0.8
+        - text: Nextflow
+          exp:
+            text: "2+ yr"
+            num: 0.2   
+        - text: Python
+          exp:
+            text: "1 yr"
+            num: 0.1                                     
+        - text: JavaScript
+          exp:
+            text: "3+ yr"
+            num: 0.3
+        - text: Web App Development
+          exp:
+            text: "3+ yr"
+            num: 0.3 
+   
+    - name: Tools
+      items:
+        - VS Code / Git / Github
+        - HPC / AWS / OpenStack
+        - R Tidyverse / R Shiny
+        - R-sf / R-terra / Leaflet.js
+        - Python-pandas
+        
+
+    - name: Awards
+      items:
+        - text: "Above and Beyond Award"
+          inst: "University of Exeter"
+          time: "2024"
+          details: "Provided essential technical support to ECRs and PGRs for IT skills, coding, genomic analysis, stats and programming."
+          
+        - text: "Co-Investigator Research Grant \\pounds30K"
+          inst: "Natural England and NRW"
+          time: "2022 & 2023"
+          details: "Conservation genomics of habitat-building coralline algae."
+          
+        - text: "Principal Investigator Research Grant \\pounds5K"
+          inst: "British Ecological Society"
+          time: "2019"
+          details: "Genomic diversity in a calcareous red seaweed."
+          
+    - name: Presentations
+      items:
+        - text: "Webinar Invited Talk"
+          inst: "\\textcolor{accentcol}{Maerl Bed Diversity of Wales: New Insights from DNA Sequencing.}\\vspace{6pt}"
+          time: "2024"
+          details: "Delivered to a mixed audience of scientists, policy-makers, admin staff and conservationists."
+          
+        - text: "Conference Talk"
+          inst: "\\textcolor{accentcol}{Bats respond to climate through phenotypic plasticity and genetic adaptations.}\\vspace{6pt}"
+          time: "\\vspace{-30pt}"
+          details: "Delivered to academics in the Biosciences department."
+          
+        - text: "Departmental Seminar"
+          inst: "\\textcolor{accentcol}{Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB.}\\vspace{6pt}"
+          time: "2023"
+          details: "Delivered to project managers, HR staff and legislation officers."        
+      
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: cvevents
+cvevents <- function(tbl, when, what, where, descr) {
+
+    command_start <- "\\cvevent"
+    tbl[[where]] <- gsub("\n", " \\\\newline ", tbl[[where]])
+    res <- paste0(
+        command_start, "{", tbl[[when]], "}", 
+        "{", tbl[[what]], "}",
+        "{", tbl[[where]], "}",
+        "{", tbl[[descr]], "}"
+        )
+
+    cat(res, sep = "\n\n\n")
+}
+
+cvproj <- function(tbl, what, role, items){
+    command_start <- "\\cvproj"
+    res <- paste0(
+        command_start, "{", tbl[[what]], "}",
+        "{", tbl[[role]], "}",
+        "{", sapply(tbl[[items]], function(x)paste0(x,collapse = ", ")), "}"
+    )
+
+    cat(res, sep = "\n\n\n")
+}
+```
+
+<!-- # Summary -->
+
+<!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. -->
+
+# Experience
+
+```{r}
+#| label: experience
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details,
+    "Postdoctoral Research Fellow in Bioinformatics and Gene Expression Analysis", "University of Exeter, UK", "07/2023 - Present", "\\textcolor{accentcol}{I am leading a project to analyse variants from DNA sequencing data (>1 TB) and differential gene expression from RNA sequencing data. I also mentor junior colleagues in coding and build open source tools to enhance accessibility and reproducibility in R.}\\vspace{14pt}",
+    
+    "Web Application Developer", "University of East Anglia, UK (Consultancy Contract)", "07/2024 - 09/2024", "\\textcolor{accentcol}{I built agile web applications for clients to showcase \\href{https://www.uea.ac.uk/climate/climate-data/attribution-of-global-warming}{emissions} and \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{wildfire} climate data. I preprocessed data to generate new statistics and prepare (geo)JSON files.}\\vspace{14pt}",
+    
+    "Bioinformatician and Software Developer", "Animal and Plant Health Agency, UK", "04/2022 - 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations.}\\vspace{14pt}",
+    
+    "Senior Data Analyst", "Natural England, UK", "02/2021 - 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps.}\\vspace{14pt}",
+    
+    "Postdoctoral Research Associate in Bioinformatics and Genome-Wide Association Studies", "University of Exeter, UK", "12/2018 - 01/2021", "" 
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", descr = "details")
+```
+
+# Education
+
+```{r}
+#| label: education
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details,
+    "PhD Evolutionary Biology", "University of Exeter, UK", "2014 - 2018", "",
+    "MRes Informatics and Genomics (Distinction)", "Imperial College London, UK", "2013 - 2014", "",
+    "BSc Marine Biology (First Class Honours)", "Swansea University, UK", "2010 - 2013", ""
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", descr = "details")
+```
+
+# Software Development
+
+See my [GitHub profile](https://github.com/tom-jenkins) for a comprehensive list of open source projects.
+\newline
+
+```{r}
+#| label: project
+#| output: asis
+tibble::tribble(
+    ~what, ~role, ~items,
+
+      "\\href{https://doi.org/10.32614/CRAN.package.mapmixture}{mapmixture}", "CRAN R package for spatial visualisation of ancestry, admixture and population structure. I am the creator and maintainer of this package.", "",
+    
+    "\\href{https://earthquake-dashboard.netlify.app}{Real-Time Earthquake Dashboard}", "Interactive dashboard developed to visualise real-time earthquakes using the Cesium ion and US Geological Survey APIs.", "",    
+    
+    "\\href{https://www.lobstergenex.com}{LobsterGeneX Web App}", "Web application developed to accompany research article allowing users to visualise gene expression data for European lobsters.", "", 
+) |>
+    cvproj(what = "what", role = "role", items = "items")
+```
+
+# Selected Publications
+
+I have authored 20 papers since 2017, 10 of which are first-author publications. On [\textcolor{gray}{Google Scholar}](https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en), my h-index is 10 with a total of 869 citations (as of May 2025). I have also achieved an Altmetric Score over 30 in seven articles, two of which scored \href{https://www.altmetric.com/details/128937304}{\textcolor{gray}{964}} and \href{https://www.altmetric.com/details/103021438}{\textcolor{gray}{221}}.
+
+\vspace{14pt}
+
+**Jenkins TL**, Axelsson M, Gall A, Ratcliffe F, Ellis CD, Stevens JR (in review). Population genomics, polyploidy, climate resilience and the microbiota of two habitat-building coralline algae. Evolutionary Applications.
+
+\vspace{14pt}
+
+**Jenkins TL** (2024). \texttt{mapmixture}: an R package and web app for spatial visualisation of admixture and population structure. Molecular Ecology Resources, 24,  [e13943](https://doi.org/10.1111/1755-0998.13943).
+
+\vspace{14pt}
+
+Ellis RJ, **Jenkins TL** (2023). Management and analysis of high-throughput sequence data for animal
+infectious disease. World Organisation for Animal Health, Scientific and Technical Review [41, 2](https://pubmed.ncbi.nlm.nih.gov/37232313/).
+
+\vspace{14pt}
+
+**Jenkins TL**, Stevens JR (2022). Predicting habitat suitability and range shifts under projected climate change for two octocorals in the north-east Atlantic. PeerJ 10, [e13509](https://doi.org/https://doi.org/10.7717/peerj.13509).
+
+\vspace{14pt}
+  
+**Jenkins TL**, Guillemin M-L, Simon-Nutbrown C, Burdett HL, Stevens JR, Peña V (2021). Whole genome genotyping reveals discrete genetic diversity in north‐east Atlantic maerl beds. Evolutionary Applications, 14, [1558–1571](https://doi.org/https://doi.org/10.1111/eva.13219).
+
+\vspace{14pt}
+
+Houston RD, Bean TP, Macqueen DJ, Gundappa MK, Jin YH, **Jenkins TL**, *et al*. (2020). Harnessing genomics to fast-track genetic improvement in aquaculture. Nature Reviews Genetics, 21, [389–409](https://doi.org/https://doi.org/10.1038/s41576-020-0227-y).
+
+\vspace{14pt}
+
+**Jenkins TL**, Ellis CD, Triantafyllidis A, Stevens JR (2019). Single nucleotide polymorphisms reveal a genetic cline across the north‐east Atlantic and enable powerful population assignment in the European lobster. Evolutionary Applications, 12, [1881-1899](https://doi.org/https://doi.org/10.1111/eva.12849).
+
+\vspace{14pt}
+
+**Jenkins TL**, Castilho R, Stevens JR (2018). Meta-analysis of northeast Atlantic marine taxa shows contrasting phylogeographic patterns following post-LGM expansions. PeerJ, 6, [e5684](https://doi.org/https://doi.org/10.7717/peerj.5684).
+
+\vspace{14pt}
+
+**Jenkins TL**, Stevens JR (2018). Assessing connectivity between MPAs: selecting taxa and translating genetic data to inform policy. Marine Policy, 94, [165-173](https://doi.org/https://doi.org/10.1016/j.marpol.2018.04.022).
+
+\vspace{14pt}
+
+# Supervising / Mentoring Experience
+
+\begin{itemize}
+  \item I mentor several postgraduates and early career researchers across research groups in coding, data analysis and genomics. 
+  \item I've taught essential wet-lab skills to postgraduates, including DNA extraction, quality assessment and gel electrophoresis.
+  \item I designed and led workshops in R programming and analysis, such as spatial analysis and creating interactive maps.
+\end{itemize}
+
+# Media
+
+\begin{itemize}
+  \item Live interview on \href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{\textit{\textcolor{gray}{BBC Radio Wales Drive}}} to discuss published research on coral habitat suitability modelling". 
+  \item Recorded interview on \href{https://www.bbc.co.uk/news/uk-england-cornwall-56586904}{\textit{\textcolor{gray}{BBC Radio Cornwall}}} to discuss published research on coralline red algae population genomics"
+\end{itemize}
