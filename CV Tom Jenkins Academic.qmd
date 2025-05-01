@@ -107,7 +107,7 @@ sidebar:
     - name: Presentations
       items:
         - text: "Webinar Invited Talk"
-          inst: "\\textcolor{accentcol}{Maerl Bed Diversity of Wales: New Insights from DNA Sequencing.}\\vspace{6pt}"
+          inst: "\\textcolor{accentcol}{Maerl bed diversity of Wales: new insights from DNA sequencing.}\\vspace{6pt}"
           time: "2024"
           details: "Delivered to a mixed audience of scientists, policy-makers, admin staff and conservationists."
           
@@ -116,7 +116,7 @@ sidebar:
           time: "\\vspace{-30pt}"
           details: "Delivered to academics in the Biosciences department."
           
-        - text: "Departmental Seminar"
+        - text: "APHA Departmental Seminar"
           inst: "\\textcolor{accentcol}{Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB.}\\vspace{6pt}"
           time: "2023"
           details: "Delivered to project managers, HR staff and legislation officers."        
