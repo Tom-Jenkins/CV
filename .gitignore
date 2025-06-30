@@ -1,3 +1,4 @@
 .Rhistory
 *.log
 *.tex
+.DS_Store
