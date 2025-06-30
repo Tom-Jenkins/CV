@@ -37,7 +37,7 @@ sidebar:
           exp:
             text: "3+ yr"
             num: 0.3
-        - text: Web App Development
+        - text: Frontend Development
           exp:
             text: "3+ yr"
             num: 0.3 
@@ -77,11 +77,11 @@ sidebar:
     - name: Tools
       items:
         - VS Code / Git / Github
-        - React (developing proficiency)
-        - Bootstrap / Tailwind CSS
+        - React
+        - Vanilla CSS / Tailwind CSS
         - RESTful API
         - HPC / AWS / OpenStack
-        - Leaflet.js / Highcharts.js
+        - Leaflet.js / ECharts.js
       
     # - name: Education
     #   items:
@@ -137,15 +137,16 @@ cvproj <- function(tbl, what, role, items){
 #| output: asis
 tibble::tribble(
     ~role, ~institution, ~dates, ~details,
-    "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK", "07/2023 - Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R.}\\vspace{14pt}",
     
-    "Web Application Developer", "University of East Anglia, UK (Consultancy Contract)", "07/2024 - 09/2024", "\\textcolor{accentcol}{I built agile web applications for clients to showcase \\href{https://www.uea.ac.uk/climate/climate-data/attribution-of-global-warming}{emissions} and \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{wildfire} climate data. I preprocessed data to generate new statistics and prepare (geo)JSON files.}\\vspace{14pt}",
+        "Frontend Developer", "TJ Data Visualisation, UK (Freelance Consultant)", "07/2024 -- Present", "\\textcolor{accentcol}{Example Project: I built agile web applications for clients to showcase climate data from the  \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{State of Wildfires} global report. These apps resulted in 1,278 page sessions, with an average duration of 3 minutes and an engagement rate of 68\\%.}\\vspace{14pt}",
     
-    "Software Developer and Bioinformatician", "Animal and Plant Health Agency, UK", "04/2022 - 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations.}\\vspace{14pt}",
+    "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "07/2023 -- Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R.}\\vspace{14pt}",
     
-    "Senior Data Analyst", "Natural England, UK", "02/2021 - 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps.}\\vspace{14pt}",
+    "Software Developer and Bioinformatician", "Animal and Plant Health Agency, UK", "04/2022 -- 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations.}\\vspace{14pt}",
     
-    "Postdoctoral Research Associate in Bioinformatics and Data Analysis", "University of Exeter, UK", "12/2018 - 01/2021", "" 
+    "Senior Data Analyst", "Natural England, UK", "02/2021 -- 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps.}\\vspace{14pt}",
+    
+    "Postdoctoral Research Associate in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "12/2018 -- 01/2021", "" 
 ) |>
     cvevents(when = "dates", what = "role", where = "institution", descr = "details")
 ```
@@ -177,7 +178,7 @@ tibble::tribble(
     
     "\\href{https://earthquake-dashboard.netlify.app}{Real-Time Earthquake Dashboard}", "Interactive dashboard developed to visualise real-time earthquakes using data fetched from the Cesium ion and US Geological Survey APIs.", "",    
     
-    "\\href{https://www.lobstergenex.com}{LobsterGeneX Web App}", "Web application developed to accompany research article allowing users to visualise gene expression data for European lobsters.", "", 
+    "\\href{https://www.lobstergenex.com}{LobsterGeneX Web App}", "React web application developed to accompany research article allowing users to visualise gene expression data for European lobsters.", "", 
     
     "\\href{https://doi.org/10.32614/CRAN.package.mapmixture}{mapmixture}", "CRAN R package for spatial visualisation of ancestry, admixture and population structure. I am the creator and maintainer of this package.", "",
 ) |>
