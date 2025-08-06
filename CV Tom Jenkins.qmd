@@ -18,7 +18,7 @@ sidebar:
     - name: Contact
       items:
         - icon: map-marker
-          text: Devon, United Kingdom
+          text: Barnstaple, United Kingdom
         - icon: envelope
           text: tom.l.jenkins@outlook.com
         - icon: home
@@ -33,18 +33,6 @@ sidebar:
           
     - name: Skills
       items:
-        - text: JavaScript
-          exp:
-            text: "3+ yr"
-            num: 0.3
-        - text: Frontend Development
-          exp:
-            text: "3+ yr"
-            num: 0.3 
-        - text: Cloud Computing
-          exp:
-            text: "8+ yr"
-            num: 0.8              
         - text: Data Analysis
           exp:
             text: "10+ yr"
@@ -52,48 +40,102 @@ sidebar:
         - text: Data Visualisation
           exp:
             text: "10+ yr"
-            num: 1            
+            num: 1
+        - text: Statistical Modelling
+          exp: 
+            text: "8+ yr"
+            num: 0.8
         - text: Bioinformatics
           exp:
             text: "8+ yr"
-            num: 0.8                       
-        - text: Bash / Unix
+            num: 0.8
+        - text: Cloud Computing
           exp:
             text: "8+ yr"
             num: 0.8
+        - text: GIS & Spatial Analysis
+          exp:
+            text: "5+ yr"
+            num: 0.5
+                               
+        
+    - name: Programming
+      items:
+        - text: JavaScript
+          exp:
+            text: "3+ yr"
+            num: 0.3
+        - text: React
+          exp:
+            text: "1+ yr"
+            num: 0.3
+        - text: Vanilla CSS
+          exp:
+            text: "3+ yr"
+            num: 0.3
+        - text: Tailwind CSS
+          exp:
+            text: "1+ yr"
+            num: 0.1
         - text: R
           exp:
             text: "10+ yr"
             num: 1
+        - text: Python
+          exp:
+            text: "1+ yr"
+            num: 0.1 
+        - text: Bash / Linux
+          exp:
+            text: "8+ yr"
+            num: 0.8
         - text: Nextflow
           exp:
             text: "2+ yr"
-            num: 0.2   
-        - text: Python
-          exp:
-            text: "1 yr"
-            num: 0.1
-  
+            num: 0.2
+        
     - name: Tools
       items:
-        - VS Code / Git / Github
-        - React
-        - Vanilla CSS / Tailwind CSS
+        - VS Code / Positron
+        - Git / GitHub / Bitbucket
         - RESTful API
-        - HPC / AWS / OpenStack
-        - Leaflet.js / ECharts.js
-      
-    # - name: Education
-    #   items:
-    #     - text: "Ph.D. Computer Science"
-    #       inst: "University of Konstanz"
-    #       time: "09/2012 - 11/2015"
-    #       details: "Thesis: Positional Approach for Network Centrality"
-    #     - text: "Businessmathematics (Dipl.)"
-    #       inst: "Karlsruhe Institute of Technology"
-    #       time: "10/2006 - 07/2012"
-    #       details: "Thesis: Modularity Maximization"
-      
+        - AWS EC2 / HPC / OpenStack
+        - Netlify / AWS Amplify
+        - ECharts.js / Leaflet.js
+        - MS Office / Google Docs
+        - Slack / Teams
+        
+    - name: Awards
+      # items:
+      #   - Above and Beyond Award
+      items:
+        - text: "Above and Beyond Award"
+          inst: "\\textit{Provided essential technical support to ECRs and PGRs for IT skills, coding, genomic analysis, stats and programming}."
+          time: "\\vspace{-50pt}"
+          details: "\\vspace{-100pt}"
+          
+        - text: "\\vspace{-20pt}Principal Investigator Research Grant \\pounds35K\\newline"
+          inst: "\\vspace{-20pt}Genomic diversity in a calcareous red seaweed."
+          time: "\\vspace{-30pt}"
+          details: "\\vspace{-100pt}"
+          
+    - name: "\\vspace{-30pt}Presentations"
+      items:
+        - text: "UK Maerl Forum Webinar\\newline Invited Talk"
+          inst: "\\vspace{1pt}\\textcolor{accentcol}{Maerl genome diversity: insights into resilience and conservation.}\\vspace{6pt}"
+          time: "\\vspace{-30pt}"
+          details: "Delivered to a 150+ mixed audience of scientists, policy-makers, admin staff and conservationists."
+          
+        - text: "Conference Talk"
+          inst: "\\textcolor{accentcol}{Bats respond to climate through phenotypic plasticity and genetic adaptations.}\\vspace{6pt}"
+          time: "\\vspace{-30pt}"
+          details: "Delivered to 100+ academics at the annual Genome Science conference."
+          
+        - text: "APHA Departmental Seminar"
+          inst: "\\textcolor{accentcol}{Whole genome sequencing: what, why and how is it used in outbreak investigations of bovine TB.}\\vspace{6pt}"
+          time: "\\vspace{-30pt}"
+          details: "Delivered to 20+ project managers, HR staff and legislation officers." 
+        
 execute: 
   echo: false
 ---
@@ -138,15 +180,17 @@ cvproj <- function(tbl, what, role, items){
 tibble::tribble(
     ~role, ~institution, ~dates, ~details,
     
-        "Frontend Developer", "TJ Data Visualisation, UK (Freelance Consultant)", "07/2024 -- Present", "\\textcolor{accentcol}{Example Project: I built agile web applications for clients to showcase climate data from the  \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{State of Wildfires} global report. These apps resulted in 1,278 page sessions, with an average duration of 3 minutes and an engagement rate of 68\\%.}\\vspace{14pt}",
+        "Frontend Developer", "TJ Data Visualisation, UK (Freelance Consultant)", "07/2024 -- Present", "\\textcolor{accentcol}{Example Project: I am an agile developer for clients in climate science, with the goal of delivering interactive web applications to showcase data from the global \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{State of Wildfires} report. Both map and time series apps achieve an average user duration of 3 minutes and an engagement rate of 68\\%.}\\vspace{14pt}",
     
-    "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "07/2023 -- Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R.}\\vspace{14pt}",
+    "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "07/2023 -- Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R and data visualisation.}\\vspace{14pt}",
     
-    "Software Developer and Bioinformatician", "Animal and Plant Health Agency, UK", "04/2022 -- 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations.}\\vspace{14pt}",
+    "Frontend Developer", "University of East Anglia, UK (Consultancy Contract)", "07/2024 -- 09/2024", "\\textcolor{accentcol}{I built interactive web applications that allow users to explore ClimateUEA's \\href{https://www.uea.ac.uk/climate/climate-data/attribution-of-global-warming}{National Contributions to Global Warming} data. I worked with climate scientists to iteratively design, develop and improve apps, and IT professionals to set up continuous integration with Bitbucket and AWS Amplify.}\\vspace{14pt}",
     
-    "Senior Data Analyst", "Natural England, UK", "02/2021 -- 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps.}\\vspace{14pt}",
+    "Software Developer and Bioinformatician", "Animal and Plant Health Agency, UK", "04/2022 -- 06/2023", "\\textcolor{accentcol}{I was the frontend developer in our team of UX, UI and backend data engineers in which we built an internal application to visualise geographic and metadata information to assist case workers in their disease outbreak investigations. I also developed \\href{https://github.com/Tom-Jenkins/nextflow-pipelines}{nextflow pipelines} to automate the QC and analysis of next-generation sequencing data.}\\vspace{14pt}",
     
-    "Postdoctoral Research Associate in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "12/2018 -- 01/2021", "" 
+    "Senior Data Analyst", "Natural England, UK", "02/2021 -- 03/2022", "\\textcolor{accentcol}{My role was to analyse, visualise and gain insights from geospatial and ecological data for multiple projects, including building R Shiny apps and interactive maps. For example, I worked with citizen scientists, government scientists and conservation advisors to develop a prototype Shiny app which enables citizens to explore the ecological diversity in their local pond habitats.}\\vspace{14pt}",
+    
+    "Postdoctoral Research Associate in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "12/2018 -- 01/2021", "\\textcolor{accentcol}{I co-led the development of the first European lobster genome and I statistically assessed genes linked to growth which could be targets for lobster aquaculture.}\\vspace{14pt}" 
 ) |>
     cvevents(when = "dates", what = "role", where = "institution", descr = "details")
 ```
@@ -158,12 +202,14 @@ tibble::tribble(
 #| output: asis
 tibble::tribble(
     ~role, ~institution, ~dates, ~details,
-    "PhD Bioinformatics", "University of Exeter, UK", "2014 - 2018", "",
+    "PhD Bioinformatics and Evolutionary Biology", "University of Exeter, UK", "2014 - 2018", "",
     "MRes Informatics and Genomics (Distinction)", "Imperial College London, UK", "2013 - 2014", "",
     "BSc Marine Biology (First Class Honours)", "Swansea University, UK", "2010 - 2013", ""
 ) |>
     cvevents(when = "dates", what = "role", where = "institution", descr = "details")
 ```
+
+\newpage
 
 # Projects
 
@@ -176,11 +222,55 @@ See my [GitHub profile](https://github.com/tom-jenkins) for a comprehensive list
 tibble::tribble(
     ~what, ~role, ~items,
     
-    "\\href{https://earthquake-dashboard.netlify.app}{Real-Time Earthquake Dashboard}", "Interactive dashboard developed to visualise real-time earthquakes using data fetched from the Cesium ion and US Geological Survey APIs.", "",    
+    "\\href{https://earthquake-dashboard.netlify.app}{Real-Time Earthquake Dashboard}", "Interactive dashboard I designed and developed to visualise real-time earthquakes using data fetched from the Cesium ion and US Geological Survey APIs.", "",    
     
-    "\\href{https://www.lobstergenex.com}{LobsterGeneX Web App}", "React web application developed to accompany research article allowing users to visualise gene expression data for European lobsters.", "", 
+    "\\href{https://www.lobstergenex.com}{LobsterGeneX React App}", "React and Tailwind CSS styled web application that I designed and developed to accompany our research article. This app allows users to visualise gene expression data for European lobsters.", "",
+    
+    "\\href{https://assemblystatsviewer.netlify.app}{Assembly Stats Viewer App}", "A web tool I developed that allows scientists to search, view and compare genome assemblies of any animal, plant or microbe. It works by building a query based on user input and which fetches data from the \\href{https://www.ncbi.nlm.nih.gov/datasets/docs/v2/api/rest-api/}{NCBI Datasets v2 REST API} to display data on the app.", "", 
     
     "\\href{https://doi.org/10.32614/CRAN.package.mapmixture}{mapmixture}", "CRAN R package for spatial visualisation of ancestry, admixture and population structure. I am the creator and maintainer of this package.", "",
 ) |>
     cvproj(what = "what", role = "role", items = "items")
 ```
+
+# Management
+
+```{r}
+#| label: management
+#| output: asis
+tibble::tribble(
+    ~what, ~role, ~items,
+    
+    "Project", "\\textcolor{accentcol}{I have experience of managing a project from conception to delivery, working with a team of people from diverse backgrounds and interests}.\\vspace{5pt}
+    \\newline 
+    For this project, I led the writing of the proposal and was awarded the funding. I then coordinated the collection of samples and delegated laboratory work to colleagues. I analysed the data and led the writing of the scientific article which is available to view on \\href{https://doi.org/10.21203/rs.3.rs-7035383/v1}{Research Square}. This project involved establishing connections and working with academics, government advisors, regional conservation trusts and local dive schools.\\vspace{5pt}", "",    
+    
+    "Mentoring", "\\textcolor{accentcol}{I have acted as a mentor and technical support for postgraduate students up to senior staff in bioinformatics, programming and data analysis}.\\vspace{5pt}
+    \\newline 
+    I have also conducted several workshops and written online tutorials to help the wider community.", "",
+
+) |>
+    cvproj(what = "what", role = "role", items = "items")
+```
+
+# Publications and Media
+
+```{r}
+#| label: publications
+#| output: asis
+tibble::tribble(
+    ~what, ~role, ~items,
+    
+    "Publications", "\\textcolor{accentcol}{To date, I have authored 20 peer-reviewed scientific articles and my work has achieved nearly 1,000 citations from other scientists}.\\vspace{5pt}
+    \\newline 
+    A full list of my publications is available on my \\href{https://scholar.google.co.uk/citations?user=k7oAuGgAAAAJ&hl=en}{Google Scholar} profile.\\vspace{5pt}", "",   
+    
+    "Media Press Releases and Interviews", "\\textcolor{accentcol}{Several of my research articles have attracted national media attention}.\\vspace{5pt}
+    \\newline 
+    For example, I used predictive modelling to assess present-day and future habitat suitability in a UK nationally rare soft coral species. This work was picked up by \\href{https://www.altmetric.com/details/128937304/news}{127 news outlets}, including the \\href{https://www.bbc.co.uk/news/uk-england-devon-61592108}{BBC Devon}, \\href{https://news.sky.com/story/british-coral-predicted-to-expand-its-range-due-to-climate-change-12622463}{Sky News} and \\href{https://www.theguardian.com/environment/2022/may/27/one-of-uks-rarest-corals-set-to-expand-its-range-as-climate-change-warms-seas}{The Guardian}, and I was interviewed live on BBC Radio Wales Drive.", "",
+
+) |>
+    cvproj(what = "what", role = "role", items = "items")
+```
+
+
