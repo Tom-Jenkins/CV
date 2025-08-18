@@ -9,10 +9,6 @@ cvcolor:
   accent: 15ABAB
 jobtitle: Software Developer & Data Analyst
 sidebar:
-  # bullets:
-  #   - Konstanz, Germany
-  #   - german
-  #   - married
   sections:
     
     - name: Contact
@@ -180,7 +176,7 @@ cvproj <- function(tbl, what, role, items){
 tibble::tribble(
     ~role, ~institution, ~dates, ~details,
     
-        "Frontend Developer", "TJ Data Visualisation, UK (Freelance Consultant)", "07/2024 -- Present", "\\textcolor{accentcol}{Example Project: I am an agile developer for clients in climate science, with the goal of delivering interactive web applications to showcase data from the global \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{State of Wildfires} report. Both map and time series apps achieve an average user duration of 3 minutes and an engagement rate of 68\\%.}\\vspace{14pt}",
+        "Frontend Developer Freelance Consultant", "TJ Data Visualisation, UK", "07/2025 -- Present", "\\textcolor{accentcol}{Example Project: I am an agile developer for clients in climate science, with the goal of delivering interactive web applications to showcase data from the global \\href{https://www.uea.ac.uk/climate/climate-data/state-of-wildfires}{State of Wildfires} report. Both map and time series apps achieve an average user duration of 3 minutes and an engagement rate of 68\\%.}\\vspace{14pt}",
     
     "Postdoctoral Research Fellow in Bioinformatics and Data Analysis", "University of Exeter, UK (Fixed Contract)", "07/2023 -- Present", "\\textcolor{accentcol}{I am leading a cloud computing project to process and analyse variants from DNA sequencing data (>1 TB) using bioinformatics and statistical analysis. I also mentor junior colleagues in coding and build tools to enhance accessibility and reproducibility in R and data visualisation.}\\vspace{14pt}",
     
