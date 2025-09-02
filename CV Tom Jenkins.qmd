@@ -29,6 +29,10 @@ sidebar:
           
     - name: Skills
       items:
+        - text: Web Applications
+          exp:
+            text: "4+ yr"
+            num: 0.4
         - text: Data Analysis
           exp:
             text: "10+ yr"
@@ -37,10 +41,10 @@ sidebar:
           exp:
             text: "10+ yr"
             num: 1
-        - text: Statistical Modelling
-          exp: 
-            text: "8+ yr"
-            num: 0.8
+        # - text: Statistical Modelling
+        #   exp: 
+        #     text: "8+ yr"
+        #     num: 0.8
         - text: Bioinformatics
           exp:
             text: "8+ yr"
@@ -97,7 +101,7 @@ sidebar:
         - RESTful API
         - AWS EC2 / HPC / OpenStack
         - Netlify / AWS Amplify
-        - ECharts.js / Leaflet.js
+        - ECharts.js / Leaflet.js / Shiny
         - MS Office / Google Docs
         - Slack / Teams
         
